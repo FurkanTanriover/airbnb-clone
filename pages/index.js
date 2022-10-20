@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import fsPromises from "fs/promises";
 import SmallCard from "../components/SmallCard";
 import MediumCard from "../components/MediumCard";
+import LargeCard from "../components/LargeCard";
 import path from "path";
 
 const Home = (props) => {
@@ -40,6 +41,7 @@ const Home = (props) => {
             })}
           </div>
         </section>
+        <LargeCard img={"https://links.papareact.com/4cj"} title={"The Greatest Outdoors"} description={"Wishlists curated by Airbnb"} buttonText={"Get inspired"}/>
       </main>
     </div>
   );
