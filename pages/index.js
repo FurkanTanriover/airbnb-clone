@@ -4,13 +4,14 @@ import Banner from "../components/Banner";
 import Header from "../components/Header";
 import fsPromises from "fs/promises";
 import SmallCard from "../components/SmallCard";
+import MediumCard from "../components/MediumCard";
 import path from "path";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Home = (props) => {
   const exploreData = props.exploreData;
-
+  const cardsData = props.cardsData;
+  console.log(exploreData);
+  console.log(cardsData);
   return (
     <div className="">
       <Head>
@@ -33,6 +34,11 @@ const Home = (props) => {
         </section>
         <section>
           <h2 className="text-4xl font-semibold py-8"> Live Anywhere</h2>
+          <div className="flex space-x-6 overflow-scroll scrollbar-hide p-3 -ml-3">
+            {cardsData.map((item) => {
+              return <MediumCard key={item.img} img={item.img} title={item.title} />;
+            })}
+          </div>
         </section>
       </main>
     </div>
@@ -42,11 +48,10 @@ const Home = (props) => {
 export default Home;
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "exploreData.json");
+  const filePath = path.join(process.cwd(), "data.json");
   const jsonData = await fsPromises.readFile(filePath);
-  const exploreData = JSON.parse(jsonData);
-
+  const data = JSON.parse(jsonData);
   return {
-    props: exploreData,
+    props: data,
   };
 }
