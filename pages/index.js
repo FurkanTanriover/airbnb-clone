@@ -6,6 +6,7 @@ import fsPromises from "fs/promises";
 import SmallCard from "../components/SmallCard";
 import MediumCard from "../components/MediumCard";
 import LargeCard from "../components/LargeCard";
+import Footer from "../components/Footer";
 import path from "path";
 
 const Home = (props) => {
@@ -35,13 +36,14 @@ const Home = (props) => {
         </section>
         <section>
           <h2 className="text-4xl font-semibold py-8"> Live Anywhere</h2>
-          <div className="flex space-x-6 overflow-scroll scrollbar-hide p-3 -ml-3">
+          <div className="flex overflow-scroll scrollbar-hide p-3 -ml-3">
             {cardsData.map((item) => {
               return <MediumCard key={item.img} img={item.img} title={item.title} />;
             })}
           </div>
         </section>
-        <LargeCard img={"https://links.papareact.com/4cj"} title={"The Greatest Outdoors"} description={"Wishlists curated by Airbnb"} buttonText={"Get inspired"}/>
+        <LargeCard img={"https://links.papareact.com/4cj"} title={"The Greatest Outdoors"} description={"Wishlists curated by Airbnb"} buttonText={"Get Inspired"}/>
+        <Footer/>
       </main>
     </div>
   );

@@ -3,7 +3,7 @@ import React from 'react'
 
 function MediumCard({img, title}) {
   return (
-    <div className=' cursor-pointer hover:scale-110 transform transition duration-300 ease-out'>
+    <div className=' p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-out'>
         <div className='relative h-80 w-80'>
             <Image src={img} layout="fill" className=' rounded-xl' />
         </div>
