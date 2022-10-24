@@ -12,8 +12,6 @@ import path from "path";
 const Home = (props) => {
   const exploreData = props.exploreData;
   const cardsData = props.cardsData;
-  console.log(exploreData);
-  console.log(cardsData);
   return (
     <div className="">
       <Head>
