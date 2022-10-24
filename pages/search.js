@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Map from "../components/Map";
 import InfoCard from "../components/InfoCard";
 import path from "path";
 import fsPromises from "fs/promises";
@@ -46,6 +47,9 @@ function Search(props) {
               );
             })}
           </div>
+        </section>
+        <section className='hidden xl:inline-flex xl:min-w-[600px] cursor-pointer'>
+          <Map/>
         </section>
       </main>
       <Footer />
